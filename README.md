@@ -1,1 +1,2 @@
-# phone_mask uses Jquery 3.0
+# phone_mask uses jQuery 3.0
+The function is called as $(NameElement).mask();
