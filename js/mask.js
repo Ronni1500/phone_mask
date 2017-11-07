@@ -63,6 +63,9 @@ $.fn.selectRange = function (start, end) {
 					}
 					return false;
 				}
+				if(e.keyCode == 46){
+					return false;
+				}
 			});
 			input.on('keyup',function(e){
 				if(e.keyCode == 8){
@@ -83,6 +86,7 @@ $.fn.selectRange = function (start, end) {
 					}
 					
 				}
+
 			});
 			input.on('input',function(e){
 				var writeCursor = input.getCursorPosition();
@@ -93,7 +97,7 @@ $.fn.selectRange = function (start, end) {
 					$(this).selectRange(cursor);
 				}
 					else{
-						if(e.keyCode != 8){
+						if(e.keyCode != 8 || e.keyCode != 46){
 						valInput[writeCursor]='';
 						var newValue = valInput.join('');
 						input.val(newValue);
